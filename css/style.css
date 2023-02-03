@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.3rem;
+  background-color: var(--light-grayish-blue);
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+.main .card {
+  position: absolute;
+  margin: 22px;
+  padding: 236px 32px 82px;
+  max-width: 330px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.main .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url(../images/drawers.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main .card-text {
+  color: var(--very-dark-grayish-blue);
+}
+.main .card-text h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.main .card-text p {
+  font-weight: 500;
+  padding-right: 10px;
+  opacity: 0.8;
+  line-height: 20px;
+}
+.main .card-author-bookmark {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  bottom: 0;
+  left: 0;
+  height: 66px;
+  width: 100%;
+}
+.main .open {
+  background-color: var(--very-dark-grayish-blue);
+}
+.main .open .card-author-links {
+  display: flex;
+}
+.main .open .card-author-info {
+  display: none;
+}
+.main .card-author-links {
+  display: none;
+}
+.main .card-author-links p {
+  color: var(--grayish-blue);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.main .card-author-links a {
+  color: #fff;
+  margin-left: 17px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.main .card-author-links a:hover {
+  color: var(--grayish-blue);
+}
+.main .card-author-info {
+  display: flex;
+}
+.main .avatar img {
+  width: 40px;
+  border-radius: 50%;
+}
+.main .author-text {
+  padding: 2px 17px;
+  color: var(--desaturated-dark-blue);
+}
+.main .author-text h2 {
+  color: var(--very-dark-grayish-blue);
+  font-size: 1.3rem;
+}
+.main .share-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: var(--light-grayish-blue);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main .share-icon svg {
+  fill: #6e8098;
+}
+.main .share-icon:hover {
+  background-color: var(--desaturated-dark-blue);
+}
+.main .active {
+  background-color: var(--desaturated-dark-blue);
+}
+.main .active svg {
+  fill: white;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .main .card {
+    padding: 34px 40px 16px 328px;
+    width: 730px;
+    max-width: 800px;
+    height: auto;
+    overflow: visible;
+  }
+  .main .hero-bg {
+    width: 286px;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+  }
+  .main .card-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .main .card-text p {
+    line-height: 18px;
+  }
+  .main .card-author-bookmark {
+    position: relative;
+    padding: 0;
+    margin-top: 14px;
+  }
+  .main .open {
+    background: none;
+  }
+  .main .open .card-author-links {
+    position: absolute;
+    display: flex;
+    top: -56px;
+    right: -109px;
+    padding: 1.2em 3em;
+    background-color: var(--very-dark-grayish-blue);
+    border-radius: 8px;
+    z-index: 10;
+  }
+  .main .open .card-author-links::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%, 0 0%);
+            clip-path: polygon(0 0, 100% 0, 50% 50%, 0 0%);
+    background-color: var(--very-dark-grayish-blue);
+  }
+  .main .open .card-author-info {
+    display: flex;
+  }
+}/*# sourceMappingURL=style.css.map */

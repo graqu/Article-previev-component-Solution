@@ -1,0 +1,218 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+:root {
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--desaturated-dark-blue: hsl(214, 17%, 51%);
+	--grayish-blue: hsl(212, 23%, 69%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+	font-family: 'Manrope', sans-serif;
+	font-size: 1.3rem;
+	background-color: var(--light-grayish-blue);
+}
+.main {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100vw;
+	.card {
+		position: absolute;
+		margin: 22px;
+		padding: 236px 32px 82px;
+		max-width: 330px;
+		// height: 506px;
+		height: auto;
+		background-color: #fff;
+		border-radius: 14px;
+		overflow: hidden;
+	}
+
+	.hero-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 200px;
+		background-image: url(../images/drawers.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.card-text {
+		color: var(--very-dark-grayish-blue);
+	}
+	.card-text h1 {
+		font-size: 1.6rem;
+		font-weight: 700;
+		margin-bottom: 24px;
+	}
+	.card-text p {
+		font-weight: 500;
+		padding-right: 10px;
+		opacity: 0.8;
+		line-height: 20px;
+	}
+	.card-author-bookmark {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 32px;
+		bottom: 0;
+		left: 0;
+		height: 66px;
+		width: 100%;
+	}
+	.open {
+		background-color: var(--very-dark-grayish-blue);
+		.card-author-links {
+			display: flex;
+		}
+		.card-author-info {
+			display: none;
+		}
+	}
+	/// CARD Author LINKS
+	.card-author-links {
+		display: none;
+	}
+	.card-author-links p {
+		color: var(--grayish-blue);
+		letter-spacing: 5px;
+		text-transform: uppercase;
+	}
+	.card-author-links a {
+		color: #fff;
+		margin-left: 17px;
+		font-size: 20px;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	.card-author-links a:hover {
+		color: var(--grayish-blue);
+	}
+	/// CARD AUTHOR INFO
+	.card-author-info {
+		display: flex;
+	}
+	.avatar img {
+		width: 40px;
+		border-radius: 50%;
+	}
+	.author-text {
+		padding: 2px 17px;
+		color: var(--desaturated-dark-blue);
+	}
+	.author-text h2 {
+		color: var(--very-dark-grayish-blue);
+		font-size: 1.3rem;
+	}
+	.share-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 33px;
+		height: 33px;
+		border-radius: 50%;
+		background-color: var(--light-grayish-blue);
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+	.share-icon svg {
+		fill: #6e8098;
+	}
+	.share-icon:hover {
+		background-color: var(--desaturated-dark-blue);
+	}
+	.active {
+		background-color: var(--desaturated-dark-blue);
+	}
+	.active svg {
+		fill: white;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+	.main {
+		// .card::after {
+		// 	content: '';
+		// 	// display: none;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 400px;
+		// 	height: 282px;
+		// 	background-color: rgba(255, 0, 0, 0.7);
+		// }
+		.card {
+			padding: 34px 40px 16px 328px;
+			width: 730px;
+			max-width: 800px;
+			// height: 506px;
+			height: auto;
+			overflow: visible;
+		}
+		.hero-bg {
+			width: 286px;
+			height: 100%;
+			border-radius: 14px 0 0 14px;
+		}
+		.card-text h1 {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-bottom: 14px;
+		}
+		.card-text p {
+			line-height: 18px;
+		}
+		.card-author-bookmark {
+			position: relative;
+			padding: 0;
+			margin-top: 14px;
+		}
+		.open {
+			background: none;
+			.card-author-links {
+				position: absolute;
+				display: flex;
+				top: -56px;
+				right: -109px;
+				padding: 1.2em 3em;
+				background-color: var(--very-dark-grayish-blue);
+				border-radius: 8px;
+				z-index: 10;
+			}
+			.card-author-links::after {
+				content: '';
+				position: absolute;
+				width: 40px;
+				height: 30px;
+				left: 50%;
+				bottom: -25px;
+				transform: translateX(-50%);
+				clip-path: polygon(0 0, 100% 0, 50% 50%, 0 0%);
+				background-color: var(--very-dark-grayish-blue);
+			}
+			.card-author-info {
+				display: flex;
+			}
+		}
+	}
+}
